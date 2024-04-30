@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;800&display=swap');
+
+
+/* o asterisco é para estilizar todos os elementos da pagina*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*espaçamentos*/
+    color: #000;
+
+}
+img{
+    max-width: 100%;/*largura maxima da imagem*/
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+html{
+    scroll-behavior: smooth;/*animacao pra quando clicar no menu vai dar uma animacao melhor*/
+}
+body {
+    font-family: 'Public Sans', sans-serif;
+}
+
+/*cabeçalho*//*estilizando a imagem*/
+
+.cabecalho{
+    display: flex; /*pra deixar a parte escrita na mesma linha da logo*/
+    justify-content: space-between;/* coloca o menu pra um lado e a logo pro outro*/
+    align-items: center;
+    padding: 25px 0;
+    max-width: 1170px;/* tamanho de tela do notebook*/
+    margin: 0 auto;/*coloca o cabecalho no meio do site*/
+    flex-wrap: wrap;/* quando nao tiver mais espaco ele vai quebrar pra baixo*/
+    scroll-behavior: smooth;
+}
+ /*parte resposiva, quando chegar nessa medida ali as configuraçoes da pagina vao ser essas*/
+
+ @media(max-width: 624px) {
+    .cabecalho {
+       justify-content: center;
+   }
+
+   .cabecalho .logo {
+       margin-bottom: 30px;
+   }
+   .navegacao .menu .item a{
+       font-size: calc(0.6em + 1vw);
+   }
+  }
+  /*logo*/
+  .logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+}
+
+.logo .imagem {
+    width: 100px;
+}
+
+/*logo{
+    display: flex;
+    box-align: center;/*centraliza os itens*/
+    /*text-transform: uppercase;/*todas as letras em ciaxa alta*/
+.logo .titulo{
+    transition: 0.3s ease-in-out;/* transicao mais suave na horade passar o mouse*/
+    margin-left: 7px;/*desgruda o titulo grudado da logo*/
+    font-size: 17px;
+    
+}
+/*hover e pra quando passar o mouse ele vai estilizar de alguma maneira*/
+.logo:hover .titulo{
+    color: #1bd760;
+}
+/*logo*/
+
+.navegacao .menu {
+    display: flex;
+}
+
+.navegacao .menu .item {
+    margin: 10px;    
+}
+
+.navegacao .menu .item a {
+    padding: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.navegacao .menu .item a:hover {
+    background-color: #1ED760;
+    color: white;
+}
+/*painel*/
+.conteudo-principal .paineis{
+    position: relative;
+    height: 700px;
+    display: flex;
+    justify-content: center;   
+    align-items: center; 
+}
+
+@media (max-width: 900px){
+    .conteudo-principal .paineis{
+        height: 500px;
+    }
+}
+.conteudo-principal .paineis .imagem-painel{
+    background-repeat: no-repeat;
+    background-size: cover;/*ccobrir todo tamanho da pagina*/
+    background-position: center;/*centarlizada*/
+    min-width: 100%;/*largura minima de imagem*/
+    height: 100%;/*altura  da imagem*/
+    position: absolute;/*dentro do painel*/
+    z-index: -1;/* o titulo por cima da imagem*/
+    filter: brightness(70%);/* filtro pra dar uma escurecida na imagem*/
+    opacity: 0;
+    transition: 0.5s ease-out;
+    font-size: 20px;
+    
+}
+.conteudo-principal .paineis .imagem-painel.projeto1{
+    background-image: url('../imagens/painel1.jpg'); /*explicar voltar a pasta  */
+}
+
+.conteudo-principal .paineis .imagem-painel.projeto2{
+    background-image: url('../imagens/painel2.jpg'); /*explicar voltar a pasta  */
+}
+
+.conteudo-principal .paineis .imagem-painel.projeto3{
+    background-image: url('../imagens/painel3.jpg'); /*explicar voltar a pasta  */
+}
+
+.conteudo-principal .paineis .imagem-painel.mostrar{
+    opacity: 1;
+}
+
+.conteudo-principal .paineis .titulo{        
+    color: #fff;
+    text-transform: uppercase;
+    font-size: calc(1em + 1vw);}
+/*setas*/
+    .conteudo-principal .paineis .seta{
+        background-image: url('../imagens/seta.png');/*pegando a seta*/
+        background-repeat: no-repeat;/*pra nao repetir o desenho da seta*/
+        background-position: center;/*alinhada a seta no centtro*/
+        background-size: contain;/*se adequa ao tamanho dad largura e altura da seta */
+        width: 50px;
+        height: 50px;
+        /*largura e altura*/
+        position: absolute;/* */
+        text-indent: 100%;/*esconder um texto*/
+        overflow: hidden;/*esconder um texto*/}
+
+        .conteudo-principal .paineis .seta.desabilitar{
+            opacity: 0.5;
+            cursor: auto;
+        }
+        /*seta*/
+        .conteudo-principal .paineis .seta.btn-voltar{
+            left: 20px;/*ir pra esquerda*/
+            transform: rotateY(180deg);
+        }
+        .conteudo-principal .paineis .btn-avancar{
+            right: 20px;
+            /*rotacionar a seta pro lado certo*/}
+
+ /*quem somos*/
+
+.quem-somos{
+    background-color: #2942ab; 
+}
+
+.quem-somos .conteudo{
+    
+    display: flex;/*separando o titulo do texto*/
+    align-items: center;/*alinhando veticalmente*/
+    padding: 0 10%; /*0 pra cima e baixo e 10% pros lados*/
+}
+
+.quem-somos .conteudo .informacoes{
+    width: 40%;/*largura*/
+
+}
+
+.quem-somos.imagem{
+  width: 60%;
+}
+@media(max-width:1.200px){
+    .quem-somos .conteudo{
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 30px;
+    }
+    .quem-somos .conteudo .informacoes{
+       margin-bottom: 30px;
+    }
+    .quem-somos .conteudo .informacoes{
+        width: 100%;
+    }
+    .quem-somos .imagem{
+        display: none;
+    }
+    .quem-somos .conteudo .informacoes .titulo{
+        font-size: 50px;/*tamanho do titulo*/
+        margin-bottom: 20px;/*espacamento entre elementos*/
+        color: #1bd760;
+    }
+    
+    .quem-somos .conteudo .informacoes .texto{
+        font-size: 20px;
+        line-height: 1.5 ;/*espaco entre as linhas*/
+        color: #ffff;
+        font-weight: 400;/*tamanho da fonte importada*/
+    }
+
+}
+/*quem somos*/
+/* RODAPÉ */
+
+.rodape{    
+    padding: 80px 0 20px 0;
+}
+
+.rodape .navegacao{
+    max-width: 1170px;    
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+@media(max-width: 940px){
+    .rodape .navegacao {
+        justify-content: center;
+    }
+
+    .rodape .navegacao .logo {
+        margin-bottom: 30px;
+    }
+
+    .rodape .navegacao .logo,
+    .rodape .navegacao .redes-sociais    
+    {
+        width: 100%;
+        justify-content: center;
+    } 
+
+    .rodape .navegacao .menu {
+        margin: 50px 0;
+        flex-direction: column;        
+        align-items: center;
+    }
+
+    .rodape .navegacao .menu .item {
+        margin: 20px 0;
+    }
+}
+
+.rodape .redes-sociais{
+    display: flex;        
+}
+
+.rodape .redes-sociais a{
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    border: 2px solid #111;
+    padding: 15px;
+    width: 65px;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+    font-size: 30px;
+}
+
+.rodape .redes-sociais a:hover{
+    background-color: #1ED760;
+}
+
+.rodape .copyright{
+    margin-top: 70px;
+    text-align: center;    
+}
+
+/* RODAPÉ */
+           
+
